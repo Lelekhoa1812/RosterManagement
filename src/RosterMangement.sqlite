@@ -1,0 +1,32 @@
+CREATE TABLE roles(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL
+);
+
+CREATE TABLE accounts(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    fullname TEXT NOT NULL,
+    password TEXT NOT NULL,
+    role_id INTEGER,
+    is_active INTEGER DEFAULT 0,
+    FOREIGN KEY (role_id) REFERENCES roles(id)
+);
+
+CREATE TABLE shifts(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER,
+    fullname TEXT,
+    sign_in TEXT,  -- Use TEXT for date/time in SQLite
+    sign_out TEXT, -- Use TEXT for date/time in SQLite
+    total_hour REAL DEFAULT 0.0, -- REAL is used for floating-point numbers
+    payment_status INTEGER DEFAULT 0,
+    FOREIGN KEY (user_id) REFERENCES accounts(id),
+    is_hidden INTEGER DEFAULT 0,
+    note TEXT
+);
+
+-- In SQLite, you can insert data directly without specifying column names if you want to use all columns
+INSERT INTO accounts(fullname, password, role_id, is_active) 
+VALUES('Admin', '1234', 2, 0);
+
+INSERT INTO roles (name) VALUES ('user'), ('admin');
