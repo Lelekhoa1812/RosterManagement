@@ -3,6 +3,7 @@ package com.example.rostermanagementandroidsystem
 import android.os.Bundle
 import android.view.Menu
 import android.view.View
+import android.widget.TextView
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
@@ -41,6 +42,14 @@ class MainActivity : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
+        // Get the business code from the Intent
+        val businessCode = intent.getStringExtra("business_code")
+
+        // Set the business code in the navigation header subtitle
+        val headerView = navView.getHeaderView(0)
+        val navHeaderSubtitle = headerView.findViewById<TextView>(R.id.textView)
+        navHeaderSubtitle.text = businessCode ?: "Welcome back!"
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
             updateFabVisibility(destination.id == R.id.userManagementFragment || destination.id == R.id.adminManagementFragment)

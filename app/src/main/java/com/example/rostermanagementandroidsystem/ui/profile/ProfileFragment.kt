@@ -22,6 +22,7 @@ class ProfileFragment : Fragment() {
     private val binding get() = _binding!!
     private var userId: Int = -1
 
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

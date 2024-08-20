@@ -3,7 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@id/credentialFragment">
+    app:startDestination="@id/businessSignInFragment">
+
+    <fragment
+        android:id="@+id/businessSignInFragment"
+        android:name="com.example.rostermanagementandroidsystem.ui.business_signin.BusinessSignInFragment"
+        android:label="Business Sign In"
+        tools:layout="@layout/fragment_business_sign_in" />
 
     <fragment
         android:id="@+id/credentialFragment"
@@ -13,13 +19,13 @@
 
     <fragment
         android:id="@+id/signUpFragment"
-        android:name="com.example.rostermanagementandroidsystem.sign_up.SignUpFragment"
+        android:name="com.example.rostermanagementandroidsystem.ui.sign_up.SignUpFragment"
         android:label="@string/menu_sign_up"
         tools:layout="@layout/fragment_sign_up" />
 
     <fragment
         android:id="@+id/adminManagementFragment"
-        android:name="com.example.rostermanagementandroidsystem.admin_management.AdminManagementFragment"
+        android:name="com.example.rostermanagementandroidsystem.ui.admin_management.AdminManagementFragment"
         android:label="Admin Management"
         tools:layout="@layout/fragment_admin_management">
         <action
@@ -32,7 +38,7 @@
 
     <fragment
         android:id="@+id/userManagementFragment"
-        android:name="com.example.rostermanagementandroidsystem.user_management.UserManagementFragment"
+        android:name="com.example.rostermanagementandroidsystem.ui.user_management.UserManagementFragment"
         android:label="@string/menu_user_management"
         tools:layout="@layout/fragment_user_management" />
     <action
@@ -68,5 +74,9 @@
     <action
         android:id="@+id/action_credentialFragment_to_userManagementFragment"
         app:destination="@id/userManagementFragment" />
+
+    <action
+        android:id="@+id/action_businessSignInFragment_to_credentialFragment"
+        app:destination="@id/credentialFragment" />
 
 </navigation>

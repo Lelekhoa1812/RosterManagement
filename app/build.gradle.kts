@@ -60,4 +60,5 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
     implementation("androidx.room:room-runtime:2.5.0")
     kapt("androidx.room:room-compiler:2.5.0")
+    implementation("com.squareup.okhttp3:okhttp:4.9.1")
 }
