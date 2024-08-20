@@ -1,3 +1,4 @@
-Current working with ver 2.0.
-
-This is the Android app allowing business's admins and staffs to manage the staffs' shift cards (timing).
+Version Control Guideline:
+1. Main branch version is a draft version.
+2. Ver 1.0 is on progress, deployed locally.
+3. Ver 2.0 is on progress, deployed online.
