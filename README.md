@@ -79,17 +79,10 @@ Each business has a dedicated SQLite database, dynamically connected by entering
 ---
 
 ## Technologies Used
-- **Frontend:** Android (Kotlin, XML)
+- **Frontend:** Android (Kotlin, XML), Website JS
 - **Backend:** Node.js with Express.js
 - **Database:** MySQL (server) and SQLite (app)
 - **Networking:** RESTful API
-
----
-
-## Contributors
-- **[Your Name]** - Project Lead
-- **[Contributor Name]** - Backend Developer
-- **[Contributor Name]** - Android Developer
 
 ---
 
